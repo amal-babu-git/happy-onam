@@ -1,0 +1,27 @@
+.ndiv{
+    
+    border-radius: 69px;
+        background: #f4f4f4;
+        box-shadow: 31px 31px 65px #dedede,
+            -31px -31px 65px #ffffff;
+}
+
+.ndiv2{
+    
+    margin-top: 30px;
+    padding: 5px;
+    max-width: 500px;
+    border-radius: 25px;
+        background: #a6adff;
+        box-shadow: 31px 31px 65px #dedede,
+            -31px -31px 65px #ebd9d9;
+    
+}
+
+.t1{
+    color: blue;
+}
+
+.t2{
+    color: brown;
+}

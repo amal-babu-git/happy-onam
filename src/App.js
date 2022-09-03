@@ -1,10 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import HappyOnam from "./components/HappyOnam";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-     Hello
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<HappyOnam/>} />
+          <Route path="/:friend/:myname" element={<HappyOnam/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
