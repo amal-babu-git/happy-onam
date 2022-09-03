@@ -1,19 +1,7 @@
-import { createTheme, styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
-import Box from "@mui/material/Box";
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import React from "react";
 import "./theme.css";
-import {
-  Button,
-  Card,
-  FormControl,
-  FormHelperText,
-  Input,
-  InputLabel,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Button, FormControl, TextField } from "@mui/material";
 import onam3 from "../images/onam3.png";
 import { useParams } from "react-router";
 import { useState } from "react";
@@ -60,11 +48,13 @@ const HappyOnam = () => {
               value={fname}
               onChange={onchangeFriendName}
             />
+
             <a
-              href="https://web.whatsapp.com/send?text= Please Visit http://www.google.com"
-              rel="nofollow noopener"
               target="_blank"
-              className="share-icon"
+              href={
+                "https://web.whatsapp.com/send?text=" +
+                `https://very-happy-onam.web.app/${mname}/${fname}`
+              }
             >
               <Button
                 style={{ marginTop: "10px" }}
