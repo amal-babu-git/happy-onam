@@ -28,7 +28,7 @@ const HappyOnam = () => {
             <h2>Dear {friend}, wish you a very happy onam .</h2>
 
             <h3>
-              <b>{myname}</b>
+              <b>By {myname}</b>
             </h3>
             <img style={{ maxWidth: "300px" }} src={onam3} alt="" />
           </div>
@@ -53,7 +53,7 @@ const HappyOnam = () => {
               target="_blank"
               href={
                 "https://web.whatsapp.com/send?text=" +
-                `https://very-happy-onam.web.app/${mname}/${fname}`
+                `https://very-happy-onam.web.app/${fname}/${myname}`
               }
             >
               <Button
