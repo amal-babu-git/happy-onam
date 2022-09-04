@@ -4,7 +4,6 @@ import "./theme.css";
 import {
   Button,
   FormControl,
-  TextareaAutosize,
   TextField,
 } from "@mui/material";
 import onam3 from "../images/onam3.png";
@@ -15,9 +14,9 @@ import { motion } from "framer-motion";
 
 const HappyOnam = () => {
   const { myname, friend, messaget } = useParams();
-  const [mname, setMname] = useState("");
-  const [fname, setFname] = useState("");
-  const [msg, setMsg] = useState("");
+  const [mname, setMname] = useState("_");
+  const [fname, setFname] = useState("_");
+  const [msg, setMsg] = useState("ഹൃദയം_നിറഞ്ഞ_ഓണാശംസകൾ");
   const [rotate, setRotate] = useState(false);
   const constrainRef = useRef(null);
   const constrainRef1 = useRef(null);
