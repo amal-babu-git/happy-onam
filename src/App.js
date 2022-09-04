@@ -8,7 +8,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HappyOnam/>} />
-          <Route path="/:friend/:myname" element={<HappyOnam/>} />
+          <Route path="/:friend/:myname/:messaget/" element={<HappyOnam/>} />
           <Route path="*" element={<HappyOnam/>} />
         </Routes>
       </BrowserRouter>

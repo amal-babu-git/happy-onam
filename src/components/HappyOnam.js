@@ -1,7 +1,12 @@
 import Grid from "@mui/material/Unstable_Grid2/Grid2";
 import React, { useRef } from "react";
 import "./theme.css";
-import { Button, FormControl, TextField } from "@mui/material";
+import {
+  Button,
+  FormControl,
+  TextareaAutosize,
+  TextField,
+} from "@mui/material";
 import onam3 from "../images/onam3.png";
 import { useParams } from "react-router";
 import { useState } from "react";
@@ -9,15 +14,17 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import { motion } from "framer-motion";
 
 const HappyOnam = () => {
-  const { myname, friend } = useParams();
+  const { myname, friend, messaget } = useParams();
   const [mname, setMname] = useState("");
   const [fname, setFname] = useState("");
+  const [msg, setMsg] = useState("");
   const [rotate, setRotate] = useState(false);
   const constrainRef = useRef(null);
   const constrainRef1 = useRef(null);
 
   const onchangeMyName = (e) => setMname(e.target.value.trim());
   const onchangeFriendName = (e) => setFname(e.target.value.trim());
+  const onChangeMsg = (e) => setMsg(e.target.value);
 
   const onShare = () => {
     console.log(mname, fname);
@@ -58,6 +65,7 @@ const HappyOnam = () => {
               dragConstraints={constrainRef1}
               transition={{ type: "tween", duration: 0.3 }}
             >
+              <p>{messaget}</p>
               <b>By {myname}</b>
             </motion.h3>
             <motion.div>
@@ -76,7 +84,15 @@ const HappyOnam = () => {
           </div>
         </div>
 
-        <motion.div className="ndiv2" drag dragConstraints={constrainRef}>
+        <motion.div
+          className="ndiv2"
+          drag
+          dragConstraints={constrainRef}
+          animate={{ y: -300, scale: 1 }}
+          initial={{ scale: 1 }}
+          transition={{ type: "tween", duration: 15 }}
+          whileHover={{ scale: 1.1 }}
+        >
           <FormControl style={{ padding: "5px", margin: "2px" }}>
             <TextField
               variant="standard"
@@ -90,13 +106,19 @@ const HappyOnam = () => {
               value={fname}
               onChange={onchangeFriendName}
             />
+            <TextField
+              variant="filled"
+              label="Message name (optional)"
+              onChange={onChangeMsg}
+              value={msg}
+            />
 
             <div>
               <a
                 aria-label="Chat on WhatsApp"
                 href={
                   "https://wa.me/?text=" +
-                  `https://very-happy-onam.web.app/${fname}/${mname}/`
+                  `https://very-happy-onam.web.app/${fname}/${mname}/"${msg}"/`
                 }
               >
                 <Button
