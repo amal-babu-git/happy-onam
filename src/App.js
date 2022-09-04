@@ -9,6 +9,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HappyOnam/>} />
           <Route path="/:friend/:myname" element={<HappyOnam/>} />
+          <Route path="*" element={<HappyOnam/>} />
         </Routes>
       </BrowserRouter>
     </div>
