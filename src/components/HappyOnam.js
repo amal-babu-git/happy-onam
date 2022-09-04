@@ -6,7 +6,7 @@ import onam3 from "../images/onam3.png";
 import { useParams } from "react-router";
 import { useState } from "react";
 import WhatsAppIcon from "@mui/icons-material/WhatsApp";
-import {motion} from "framer-motion"
+import { motion } from "framer-motion";
 
 const HappyOnam = () => {
   const { myname, friend } = useParams();
@@ -16,8 +16,8 @@ const HappyOnam = () => {
   const constrainRef = useRef(null);
   const constrainRef1 = useRef(null);
 
-  const onchangeMyName = (e) => setMname(e.target.value);
-  const onchangeFriendName = (e) => setFname(e.target.value);
+  const onchangeMyName = (e) => setMname(e.target.value.trim());
+  const onchangeFriendName = (e) => setFname(e.target.value.trim());
 
   const onShare = () => {
     console.log(mname, fname);
