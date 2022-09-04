@@ -96,7 +96,7 @@ const HappyOnam = () => {
                 aria-label="Chat on WhatsApp"
                 href={
                   "https://wa.me/?text=" +
-                  `https://very-happy-onam.web.app/${fname}/${mname}`
+                  `https://very-happy-onam.web.app/${fname}/${mname}/`
                 }
               >
                 <Button
