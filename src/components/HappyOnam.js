@@ -22,9 +22,9 @@ const HappyOnam = () => {
   const constrainRef = useRef(null);
   const constrainRef1 = useRef(null);
 
-  const onchangeMyName = (e) => setMname(e.target.value.trim());
-  const onchangeFriendName = (e) => setFname(e.target.value.trim());
-  const onChangeMsg = (e) => setMsg(e.target.value);
+  const onchangeMyName = (e) => setMname(e.target.value.replaceAll(" ", "_"));
+  const onchangeFriendName = (e) =>setFname(e.target.value.replaceAll(" ", "_"));
+  const onChangeMsg = (e) => setMsg(e.target.value.replaceAll(" ", "_"));
 
   const onShare = () => {
     console.log(mname, fname);
@@ -54,7 +54,7 @@ const HappyOnam = () => {
               dragConstraints={constrainRef1}
               transition={{ type: "tween", duration: 0.3 }}
             >
-              Dear {friend}, wish you a very happy onam .
+              Dear {friend.replaceAll("_", " ")}, wish you a very happy onam .
             </motion.h2>
 
             <motion.h3
@@ -65,8 +65,8 @@ const HappyOnam = () => {
               dragConstraints={constrainRef1}
               transition={{ type: "tween", duration: 0.3 }}
             >
-              <p>{messaget}</p>
-              <b>By {myname}</b>
+              <p>{messaget.replaceAll("_", " ")}</p>
+              <b>By {myname.replaceAll("_", " ")}</b>
             </motion.h3>
             <motion.div>
               <motion.img
@@ -118,7 +118,7 @@ const HappyOnam = () => {
                 aria-label="Chat on WhatsApp"
                 href={
                   "https://wa.me/?text=" +
-                  `https://very-happy-onam.web.app/${fname}/${mname}/"${msg}"/`
+                  `https://very-happy-onam.web.app/${fname}/${mname}/${msg}/`
                 }
               >
                 <Button
