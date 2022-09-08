@@ -95,19 +95,19 @@ const HappyOnam = () => {
           <FormControl style={{ padding: "5px", margin: "2px" }}>
             <TextField
               variant="standard"
-              label="Your name"
+              label="Your name*"
               value={mname}
               onChange={onchangeMyName}
             />
             <TextField
               variant="standard"
-              label="Friend name (optional)"
+              label="Friend name"
               value={fname}
               onChange={onchangeFriendName}
             />
             <TextField
               variant="filled"
-              label="Message name (optional)"
+              label="Message"
               onChange={onChangeMsg}
               value={msg}
             />
